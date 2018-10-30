@@ -2,12 +2,7 @@ from flask import Flask
 
 app = Flask(__name__)
 
-developers = [
-    {'first_name': "Ivan", 'last_name': 'Pidkova', 'programming_language': 'VBA'},
-    {'first_name': "Petro", 'last_name': 'Koloda', 'programming_language': 'C++'},
-    {'first_name': "Viktor", 'last_name': 'Maly', 'programming_language': 'Ruby'},
-    {'first_name': "Gosha", 'last_name': 'Kuzenko', 'programming_language': 'Python'}
-]
+developers = []
 
 
 class Developer:
@@ -19,6 +14,16 @@ class Developer:
     def __str__(self):
         return f'{self.first_name} {self.last_name} - {self.programming_language}'
 
+ivan = Developer('Ivan','Pidkova','VBA')
+petro = Developer('Petro', 'Koloda', 'C++')
+viktor = Developer('Viktor', 'Maly', 'Ruby')
+gosha = Developer('Gosha', 'Kuzenko', 'Python')
+
+developers.append(ivan)
+developers.append(petro)
+developers.append(viktor)
+developers.append(gosha)
+    
 def get_list_dev():
     return '<br>'.join([str(d) for d in developers])
 
